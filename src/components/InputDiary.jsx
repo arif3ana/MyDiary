@@ -34,13 +34,14 @@ class InputDiary extends React.Component {
   }
 
   handleAddNote() {
-    return {
+    const note = {
       id: +new Date(),
       title: this.state.title,
       body: this.state.body,
       createdAt: showFormattedDate(new Date()),
       archived: false,
     };
+    return note;
   }
 
   render() {

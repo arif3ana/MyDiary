@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/App.css";
 import InputDiary from "./InputDiary";
+import Notes from "./Notes";
 
 function App() {
   const data = localStorage.getItem("NOTES"); //mengambil data dari local storage
@@ -13,6 +14,7 @@ function App() {
       <InputDiary />
       <div className='App-body'>
         <h2>My Notes</h2>
+        <Notes notes={notes} />
       </div>
     </>
   );
