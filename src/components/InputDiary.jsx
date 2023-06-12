@@ -1,16 +1,20 @@
 import React from "react";
 import { showFormattedDate } from "../utils";
+
 class InputDiary extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      id: +new Date(),
       title: "",
       body: "",
+      createdAt: showFormattedDate(new Date()),
+      archived: false,
     };
     this.changeBody = this.changeBody.bind(this);
     this.changeTitle = this.changeTitle.bind(this);
-    this.handleAddNote = this.handleAddNote.bind(this);
+    // this.handleAddNote = this.handleAddNote.bind(this);
     this.submit = this.submit.bind(this);
   }
 
@@ -26,23 +30,18 @@ class InputDiary extends React.Component {
     });
   }
 
-  notes = []; //array untuk menampung data object dari method handleAddNote
   submit(e) {
     e.preventDefault();
-    this.notes.push(this.handleAddNote());
-    localStorage.setItem("NOTES", JSON.stringify(this.notes));
+    this.props.addNotes(this.state);
   }
 
-  handleAddNote() {
-    const note = {
-      id: +new Date(),
-      title: this.state.title,
-      body: this.state.body,
-      createdAt: showFormattedDate(new Date()),
-      archived: false,
-    };
-    return note;
-  }
+  // handleAddNote() {
+  //   const note = {
+  //     title: this.state.title,
+  //     body: this.state.body,
+  //   };
+  //   return note;
+  // }
 
   render() {
     return (
