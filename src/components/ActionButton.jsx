@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ActionButton({ index, onDelete, onArchived, id }) {
+export default function ActionButton({ index, onDelete, onArchived }) {
   return (
     <div className='note-item__action'>
       <button
@@ -10,7 +10,7 @@ export default function ActionButton({ index, onDelete, onArchived, id }) {
       </button>
       <button
         className='note-item__archive-button'
-        onClick={() => onArchived(id)}>
+        onClick={() => onArchived(index)}>
         Archived
       </button>
     </div>

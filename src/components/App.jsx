@@ -15,7 +15,7 @@ function App() {
 
   //function untuk menambah data notes
   const onAddNotes = (prop) => {
-    notes.push(prop);
+    notes.unshift(prop);
     localStorage.setItem("NOTES", JSON.stringify(notes));
     window.location.reload();
   };
@@ -27,12 +27,12 @@ function App() {
     window.location.reload();
   };
 
-  // const archivedNote = (idNote) => {
-  //   const target = notes.find(() => idNote);
-  //   target.forEach((getNote) => {
-  //     console.log((getNote.archived = true));
-  //   });
-  // };
+  // function untuk mengubah nilai property archived menjadi true
+  const archivedNote = (index) => {
+    notes[index].archived = true;
+    localStorage.setItem("NOTES", JSON.stringify(notes));
+    window.location.reload();
+  };
 
   return (
     <>
