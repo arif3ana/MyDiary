@@ -8,10 +8,10 @@ export default function ActionButton({ index, onDelete, onArchived }) {
         onClick={() => onDelete(index)}>
         Delete
       </button>
-      <button
+      <button //jika di route archive content Unarchive , jika bukan di route arsive content Archive
         className='note-item__archive-button'
         onClick={() => onArchived(index)}>
-        Archived
+        Unarchive
       </button>
     </div>
   );

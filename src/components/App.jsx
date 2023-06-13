@@ -2,6 +2,7 @@ import React from "react";
 import "../style/App.css";
 import InputDiary from "./InputDiary";
 import Notes from "./Notes";
+import ArchiveNotes from "./ArchiveNotes";
 
 function App() {
   const notes = []; //array untuk menampung data object dari method handleAddNote
@@ -27,9 +28,13 @@ function App() {
     window.location.reload();
   };
 
-  // function untuk mengubah nilai property archived menjadi true
+  // function untuk mengubah nilai property archived menjadi true dan sebeliknya
   const archivedNote = (index) => {
-    notes[index].archived = true;
+    if (notes[index].archived === false) {
+      notes[index].archived = true;
+    } else {
+      notes[index].archived = false;
+    }
     localStorage.setItem("NOTES", JSON.stringify(notes));
     window.location.reload();
   };
@@ -43,6 +48,12 @@ function App() {
       <div className='App-body'>
         <h2>My Notes</h2>
         <Notes notes={notes} onDelete={removeNote} onArchived={archivedNote} />
+        <h2>Archive </h2>
+        <ArchiveNotes
+          notes={notes}
+          onDelete={removeNote}
+          onArchived={archivedNote}
+        />
       </div>
     </>
   );
