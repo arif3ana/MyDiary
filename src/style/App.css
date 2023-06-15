@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2? family= DM+Sans:wght@700 & family= Syne & display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -5,19 +7,15 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background-color: #202124;
-  color: white;
+  font-family: "DM Sans", "Syne", sans-serif;
 }
 
 input,
 textarea {
   padding: 12px;
-  margin: 12px 0;
-  font-family: "Inter", sans-serif;
+  font-family: "DM Sans", sans-serif;
   background-color: transparent;
-  color: white;
-  border: 1px solid #aaa;
+  border: 1px solid black;
   border-radius: 4px;
 }
 
@@ -27,35 +25,49 @@ textarea::placeholder {
   font-weight: bold;
 }
 
-.app-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 16px;
-  border-bottom: 1px solid #aaa;
+/* Navbar */
+.navbar {
+  padding-left: 3.3%;
+  padding-right: 3.3%;
+  background-color: #f2f2f2;
+  margin-bottom: 20px;
 }
 
-.app-header h1 {
-  margin: 8px 0;
-  flex: 1;
-  color: white;
+.navbar-brand {
+  font-size: 28px;
+  font-family: "Syne", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.app-body {
-  max-width: 1000px;
-  margin: 16px auto;
-  padding: 12px;
+.nav-link {
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+  color: #aaa;
 }
 
-.app-body h2 {
-  font-weight: normal;
-  margin: 16px 0;
+.nav-link:hover {
+  color: #000000;
+}
+/* Akhir Navbar */
+
+/* section form input */
+section {
+  padding-left: 4.2%;
+  padding-right: 4.2%;
 }
 
 .note-input {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 800px;
   margin-bottom: 48px;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
 }
 
 .note-input input,
@@ -81,22 +93,25 @@ textarea::placeholder {
 .note-input button {
   display: block;
   width: 100%;
-  padding: 8px;
-  background-color: transparent;
-  font-family: "Inter", sans-serif;
-  color: white;
-  border: 1px solid #aaa;
+  font-family: "DM Sans", sans-serif;
+  border: 1px solid black;
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
 }
+/* akhir section form input */
 
-.notes-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: minmax(min-content, max-content);
-  gap: 16px;
-  margin-bottom: 48px;
+/* Body content */
+.app-body {
+  padding-left: 4.2%;
+  padding-right: 4.2%;
+}
+
+.content-title {
+  font-family: "Syne", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .notes-list .empty-message {
@@ -105,15 +120,15 @@ textarea::placeholder {
 }
 
 .note-item {
-  border: 1px solid #aaa;
-  border-radius: 4px;
+  border: 3px solid black;
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
 .note-content {
-  padding: 12px;
+  padding: 14px 14px 5px 14px;
   flex: 1;
 }
 
@@ -122,37 +137,51 @@ textarea::placeholder {
   overflow: hidden;
   white-space: nowrap;
   margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 22px;
 }
 
 .note-date {
-  font-size: 12px;
-  margin-bottom: 8px;
+  font-size: 15px;
+  margin-bottom: 5px;
   color: #aaa;
+  text-align: end;
 }
 
 .note-body {
-  font-size: 14px;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.btn-link {
+  color: #aaa;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: #666666;
 }
 
 .note-action {
   display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
 }
 
 .note-item__delete-button,
 .note-item__archive-button {
   display: block;
   width: 100%;
-  background-color: transparent;
+  background-color: #f2f2f2;
   border: 0;
   border-top: 1px solid #aaa;
-  padding: 8px 0;
-  font-family: "Inter", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-weight: bold;
   cursor: pointer;
 }
 
 .note-item__delete-button {
-  border-right: 1px solid #aaa;
   color: #ff5f52;
 }
 
@@ -160,28 +189,55 @@ textarea::placeholder {
   color: #b00020;
 }
 .note-item__archive-button {
-  border-right: 1px solid #aaa;
   color: #385af1;
 }
 
 .note-item__archive-button:hover {
   color: #0300b0;
 }
+/* akhir body content */
 
-@media only screen and (min-width: 500px) {
-  .notes-list {
-    grid-template-columns: 1fr 1fr;
+/* @media only screen and (max-width: 500px) {
+  body {
+    background-color: #000000;
+  }
+} */
+
+@media only screen and (max-width: 600px) {
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 13px;
+  }
+
+  .note-input button {
+    font-size: 14px;
+  }
+
+  .navbar-brand,
+  .content-title {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .note-title {
+    font-size: 14px;
+  }
+
+  .note-date,
+  .note-body {
+    font-size: 13px;
+  }
+
+  .note-action {
+    font-size: 14px;
   }
 }
 
-@media only screen and (min-width: 800px) {
-  .notes-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media only screen and (min-width: 800px) {
+/* @media only screen and (min-width: 800px) {
   .notes-list {
     grid-template-columns: repeat(4, 1fr);
   }
-}
+} */

@@ -14,7 +14,6 @@ class InputDiary extends React.Component {
     };
     this.changeBody = this.changeBody.bind(this);
     this.changeTitle = this.changeTitle.bind(this);
-    // this.handleAddNote = this.handleAddNote.bind(this);
     this.submit = this.submit.bind(this);
   }
 
@@ -35,19 +34,10 @@ class InputDiary extends React.Component {
     this.props.addNotes(this.state);
   }
 
-  // handleAddNote() {
-  //   const note = {
-  //     title: this.state.title,
-  //     body: this.state.body,
-  //   };
-  //   return note;
-  // }
-
   render() {
     return (
       <>
         <form className='note-input' onSubmit={this.submit}>
-          <h3>Buat Catatan</h3>
           <input
             className='input-title'
             name='title'
@@ -64,7 +54,9 @@ class InputDiary extends React.Component {
             onChange={this.changeBody}
             required
           />
-          <button type='submit'>Buat</button>
+          <button type='submit' className='btn btn-outline-secondary'>
+            Buat Catatan
+          </button>
         </form>
       </>
     );
