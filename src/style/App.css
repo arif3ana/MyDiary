@@ -61,7 +61,7 @@ section {
   margin: 0 auto;
   max-width: 800px;
   margin-bottom: 48px;
-  border: 2px solid black;
+  border: 3px solid black;
   border-radius: 20px;
   padding: 20px;
   display: flex;
@@ -149,7 +149,7 @@ section {
 }
 
 .note-body {
-  font-size: 16px;
+  font-size: 15px;
   text-align: justify;
 }
 
@@ -157,6 +157,8 @@ section {
   color: #aaa;
   font-weight: bold;
   text-decoration: none;
+  background-color: transparent;
+  border: none;
 }
 
 .btn-link:hover {
