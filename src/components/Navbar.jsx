@@ -17,7 +17,6 @@ export default function Navbar() {
                 to='/'>
                 Home
               </Link>
-              {/* active */}
             </li>
             <li className='nav-item'>
               <Link
