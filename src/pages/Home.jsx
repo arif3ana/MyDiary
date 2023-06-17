@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../style/App.css";
-import InputDiary from "./InputDiary";
-import Notes from "./Notes";
-import Navbar from "./Navbar";
+import InputDiary from "../components/InputDiary";
+import Notes from "../components/Notes";
+import Navbar from "../components/Navbar";
 
 function Home() {
   const notes = []; //array untuk menampung data object dari method handleAddNote

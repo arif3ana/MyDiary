@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./Navbar";
-import ArchiveNotes from "./ArchiveNotes";
+import Navbar from "../components/Navbar";
+import ArchiveNotes from "../components/ArchiveNotes";
 
 export default function Archive() {
   const notes = []; //array untuk menampung data object dari method handleAddNote
