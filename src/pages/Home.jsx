@@ -1,10 +1,10 @@
 import React from "react";
 import "../style/App.css";
-import InputDiary from "./InputDiary";
-import Notes from "./Notes";
-import ArchiveNotes from "./ArchiveNotes";
+import InputDiary from "../components/InputDiary";
+import Notes from "../components/Notes";
+import Navbar from "../components/Navbar";
 
-function App() {
+function Home() {
   const notes = []; //array untuk menampung data object dari method handleAddNote
 
   const data = JSON.parse(localStorage.getItem("NOTES")); //mengambil && parsing data storage
@@ -41,22 +41,18 @@ function App() {
 
   return (
     <>
-      <header className='App-header'>
-        <h1>MyDiary</h1>
+      <header>
+        <Navbar />
       </header>
-      <InputDiary addNotes={onAddNotes} />
-      <div className='App-body'>
-        <h2>My Notes</h2>
+      <section>
+        <InputDiary addNotes={onAddNotes} />
+      </section>
+      <div className='app-body container-fluid'>
+        <h2 className='content-title'>My Notes</h2>
         <Notes notes={notes} onDelete={removeNote} onArchived={archivedNote} />
-        <h2>Archive </h2>
-        <ArchiveNotes
-          notes={notes}
-          onDelete={removeNote}
-          onArchived={archivedNote}
-        />
       </div>
     </>
   );
 }
 
-export default App;
+export default Home;
