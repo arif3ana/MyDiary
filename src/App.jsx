@@ -7,15 +7,13 @@ import Archive from "./pages/Archive";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='archive' element={<Archive />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='archive' element={<Archive />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
