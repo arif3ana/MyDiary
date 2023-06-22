@@ -14,7 +14,7 @@ export default function Navbar() {
                 className={`nav-link ${
                   window.location.pathname === "/MyDiary/Home" ? "active" : ""
                 }`}
-                to='/Home'>
+                to='#/Home'>
                 Home
               </Link>
             </li>
@@ -25,7 +25,7 @@ export default function Navbar() {
                     ? "active"
                     : ""
                 }`}
-                to='/archive'>
+                to='#/archive'>
                 Archive
               </Link>
             </li>
