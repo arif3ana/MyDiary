@@ -10,8 +10,8 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route index path='/Home' element={<Home />} />
-        <Route path='/archive' element={<Archive />} />
+        <Route index path='#/Home' element={<Home />} />
+        <Route path='#/archive' element={<Archive />} />
       </Routes>
     </>
   );
