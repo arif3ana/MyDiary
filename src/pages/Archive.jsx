@@ -31,9 +31,6 @@ export default function Archive() {
 
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
       <div className='app-body container-fluid'>
         <h2 className='content-title'>Record archive</h2>
         <ArchiveNotes
