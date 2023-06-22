@@ -41,9 +41,6 @@ function Home() {
 
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
       <section>
         <InputDiary addNotes={onAddNotes} />
       </section>
