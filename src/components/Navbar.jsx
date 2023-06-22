@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <nav className='navbar navbar-expand-lg sticky-top'>
       <div className='container-fluid'>
-        <a className='navbar-brand' href='/MyDiary'>
+        <a className='navbar-brand' href='/Home'>
           MyDiary
         </a>
         <div>
@@ -12,16 +12,18 @@ export default function Navbar() {
             <li className='nav-item'>
               <Link
                 className={`nav-link ${
-                  window.location.pathname === "/MyDiary" ? "active" : ""
+                  window.location.pathname === "/MyDiary/Home" ? "active" : ""
                 }`}
-                to='/'>
+                to='/Home'>
                 Home
               </Link>
             </li>
             <li className='nav-item'>
               <Link
                 className={`nav-link ${
-                  window.location.pathname === "/archive" ? "active" : ""
+                  window.location.pathname === "/MyDiary/archive"
+                    ? "active"
+                    : ""
                 }`}
                 to='/archive'>
                 Archive

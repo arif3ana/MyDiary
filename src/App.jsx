@@ -1,17 +1,17 @@
 import React from "react";
 import "./style/App.css";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Archive from "./pages/Archive";
 
 function App() {
   return (
-    <HashRouter basename='/'>
+    <BrowserRouter basename='/MyDiary'>
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        <Route index path='/Home' element={<Home />} />
         <Route path='/archive' element={<Archive />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
