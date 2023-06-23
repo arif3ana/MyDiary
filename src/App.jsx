@@ -1,18 +1,18 @@
 import React from "react";
 import "./style/App.css";
-import { Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
 import Archive from "./pages/Archive";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route index path='/Home' element={<Home />} />
-        <Route path='/archive' element={<Archive />} />
-      </Routes>
+      <HashRouter>
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route path='/archive' element={<Archive />} />
+        </Routes>
+      </HashRouter>
     </>
   );
 }
