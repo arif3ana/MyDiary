@@ -11,7 +11,7 @@ export default function ActionButton({ index, onDelete, onArchived }) {
       <button
         className='note-item__archive-button'
         onClick={() => onArchived(index)}>
-        {window.location.pathname == "/archive" ? "Unarchive" : "Archive"}
+        {window.location.hash == "#/archive" ? "Unarchive" : "Archive"}
       </button>
     </div>
   );
