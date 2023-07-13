@@ -33,7 +33,7 @@ export default function Notes({ notes, onDelete, onArchived }) {
           //  operator ?. digunakan untuk menghindari error jika item dengan id yang dicari tidak ditemukan atau item tersebut tidak memiliki property 'status'. Kemudian operator atau (||) digunakan untuk memberikan nilai default false jika nilai status adalah undefined atau null
           return (
             <div className='col-lg-4 mb-3' key={`${index}-${note.id}`}>
-              <div className='note-item' key={note.id}>
+              <div role='list' className='note-item' key={note.id}>
                 <div className='note-content'>
                   <h2 className='note-title'> {note.title} </h2>
                   <p className='note-date'> {note.createdAt} </p>

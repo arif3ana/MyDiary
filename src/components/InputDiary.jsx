@@ -37,7 +37,7 @@ class InputDiary extends React.Component {
   render() {
     return (
       <>
-        <form className='note-input' onSubmit={this.submit}>
+        <form role='input-form' className='note-input' onSubmit={this.submit}>
           <input
             className='input-title'
             name='title'
